@@ -9,7 +9,9 @@
     <aura:attribute name="padding" type="String" access="global" default="10px 10px 10px 10px" description="style padding: top right bottom left"/>
     <aura:attribute name="horizontalAlign" type="String" access="global" default="" description="center, space, spread, end" />
     <aura:attribute name="buttonClass" type="String" access="global" default="" description="CSS class applied to the button (example: slds-align_absolute-center)"/>
- 
+ 	<aura:attribute name="buttonIconName" type="String" access="global" default="" description="any SLDS icon name (examples: action:add_contact, utility:approval"/>
+    <aura:attribute name="buttonIconPosition" type="String" access="global" default="left" description="left, right"/>   
+    
     <!-- component actions -->
     <aura:attribute name="flowToLaunch" type="String" access="global" description="Flow API Name. If empty, the button is used to fire the flow action."/>
     <aura:attribute name="recordId" type="String" access="global" description="recordId passed as input to the flow" /> 
@@ -38,6 +40,8 @@
                 <aura:if isTrue="{!v.showButton}">
                     <lightning:button label="{!v.buttonLabel}" 
                                       class="{!v.buttonClass}"
+                                      iconName="{! v.buttonIconName }"
+                                      iconPosition="{! v.buttonIconPosition }"
                                       variant="{!v.variant}" 
                                       onclick="{!c.handleNavigation}"/>
                 </aura:if>

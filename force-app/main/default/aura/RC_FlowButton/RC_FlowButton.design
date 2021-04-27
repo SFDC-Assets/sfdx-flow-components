@@ -1,6 +1,6 @@
 <design:component>
     
-    <!-- input parameters -->
+    <!-- input parameters --> 
 
     <!-- component styling -->
 	<design:attribute name="buttonLabel" label="Button Label" />
@@ -9,6 +9,8 @@
     <design:attribute name="padding" label="Style Padding" description="padding format: top right bottom left; default: 10px 10px 10px 10px" />
     <design:attribute name="horizontalAlign" label="Horizontal Align" description="center, space, spread, end"/>
     <design:attribute name="buttonClass" label="Button CSS class" description="CSS class applied to the button (example: slds-align_absolute-center)"/>
+    <design:attribute name="buttonIconName" label="Button Icon Name" description="any SLDS icon name (examples: action:add_contact, utility:approval)"/>
+    <design:attribute name="buttonIconPosition" label="Button Icon Position" description="position of the icon in relation to the button label: left/right"/>
     
     <!-- component actions -->
     <design:attribute name="flowToLaunch" label="Flow to Launch (API Name)" description="Flow API Name. If empty, the button is used to fire the flow action." />
