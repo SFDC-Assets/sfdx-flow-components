@@ -1,0 +1,103 @@
+<aura:component description="RC_FlowNavButtons" implements="lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+    <!-- input -->
+    <aura:attribute name="componentClass" type="String" access="global" default="slds-float_right slds-p-top_large slds-p-bottom_large" />
+
+    <!-- button 1 -->
+    <aura:attribute name="showButton1" type="Boolean" access="global" default="true"/>
+    <aura:attribute name="button1_label" type="String" access="global" default="Cancel"/>
+    <aura:attribute name="button1_variant" type="String" access="global" default="DESTRUCTIVE"/>
+    <aura:attribute name="button1_class" type="String" access="global" default="slds-size_12-of-12" />
+    <aura:attribute name="button1_padding" type="String" access="global" default="10px 10px 10px 10px" />
+    <aura:attribute name="button1_horizontalAlign" type="String" access="global" default=""  />
+    <aura:attribute name="button1_buttonClass" type="String" access="global" default="" />
+    <aura:attribute name="button1_buttonFlowAction" type="String" access="global" default="NEXT"  />
+
+    <!-- button 2 -->
+    <aura:attribute name="showButton2" type="Boolean" access="global" default="true"/>
+    <aura:attribute name="button2_label" type="String" access="global" default="Back"/>
+    <aura:attribute name="button2_variant" type="String" access="global" default="NEUTRAL"/>
+    <aura:attribute name="button2_class" type="String" access="global" default="slds-size_12-of-12" />
+    <aura:attribute name="button2_padding" type="String" access="global" default="10px 10px 10px 10px" />
+    <aura:attribute name="button2_horizontalAlign" type="String" access="global" default=""  />
+    <aura:attribute name="button2_buttonClass" type="String" access="global" default="" />
+    <aura:attribute name="button2_buttonFlowAction" type="String" access="global" default="NEXT"  />
+
+    <!-- button 3 -->
+    <aura:attribute name="showButton3" type="Boolean" access="global" default="true"/>
+    <aura:attribute name="button3_label" type="String" access="global" default="Next"/>
+    <aura:attribute name="button3_variant" type="String" access="global" default="BRAND"/>
+    <aura:attribute name="button3_class" type="String" access="global" default="slds-size_12-of-12" />
+    <aura:attribute name="button3_padding" type="String" access="global" default="10px 10px 10px 10px" />
+    <aura:attribute name="button3_horizontalAlign" type="String" access="global" default=""  />
+    <aura:attribute name="button3_buttonClass" type="String" access="global" default="" />
+    <aura:attribute name="button3_buttonFlowAction" type="String" access="global" default="NEXT"  />
+
+    <!-- private -->
+    <aura:attribute name="button1_clicked" type="Boolean" default="false"/>
+    <aura:attribute name="button2_clicked" type="Boolean" default="false"/>
+    <aura:attribute name="button3_clicked" type="Boolean" default="false"/>
+
+    <!-- output -->
+    <aura:attribute name="buttonClicked" type="String" access="global"/>
+
+    <!-- handlers -->
+    <aura:handler name="change" value="{!v.button1_clicked}" action="{!c.button1_Clicked}"/>
+    <aura:handler name="change" value="{!v.button2_clicked}" action="{!c.button2_Clicked}"/>
+    <aura:handler name="change" value="{!v.button3_clicked}" action="{!c.button3_Clicked}"/>
+
+    <!-- body -->
+    <div class="{!v.componentClass}">
+
+        <lightning:layout>
+
+            <aura:if isTrue="{!v.showButton1}">
+                <lightning:layoutItem>
+                    <c:RC_FlowButton navigateFlow="{!v.navigateFlow}"
+                                     buttonLabel="{!v.button1_label}"
+                                     variant="{!v.button1_variant}"
+                                     class="{!v.button1_class}"
+                                     padding="{!v.button1_padding}"
+                                     horizontalAlign="{!v.button1_horizontalAlign}"
+                                     buttonClass="{!v.button1_buttonClass}"
+                                     buttonFlowAction="{!v.button1_buttonFlowAction}"
+                                     buttonClicked="{!v.button1_clicked}"
+                    />
+                </lightning:layoutItem>
+            </aura:if>
+
+            <aura:if isTrue="{!v.showButton2}">
+                <lightning:layoutItem>
+                    <c:RC_FlowButton navigateFlow="{!v.navigateFlow}"
+                                     buttonLabel="{!v.button2_label}"
+                                     variant="{!v.button2_variant}"
+                                     class="{!v.button2_class}"
+                                     padding="{!v.button2_padding}"
+                                     horizontalAlign="{!v.button2_horizontalAlign}"
+                                     buttonClass="{!v.button2_buttonClass}"
+                                     buttonFlowAction="{!v.button2_buttonFlowAction}"
+                                     buttonClicked="{!v.button2_clicked}"
+                    />
+                </lightning:layoutItem>
+            </aura:if>
+
+            <aura:if isTrue="{!v.showButton3}">
+                <lightning:layoutItem>
+                    <c:RC_FlowButton navigateFlow="{!v.navigateFlow}"
+                                     buttonLabel="{!v.button3_label}"
+                                     variant="{!v.button3_variant}"
+                                     class="{!v.button3_class}"
+                                     padding="{!v.button3_padding}"
+                                     horizontalAlign="{!v.button3_horizontalAlign}"
+                                     buttonClass="{!v.button3_buttonClass}"
+                                     buttonFlowAction="{!v.button3_buttonFlowAction}"
+                                     buttonClicked="{!v.button3_clicked}"
+                    />
+                </lightning:layoutItem>
+            </aura:if>
+
+        </lightning:layout>
+
+    </div>
+
+</aura:component>

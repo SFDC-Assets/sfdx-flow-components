@@ -3,17 +3,17 @@
     <decisions>
         <name>Decision_Navigation</name>
         <label>Navigation?</label>
-        <locationX>277</locationX>
-        <locationY>100</locationY>
+        <locationX>314</locationX>
+        <locationY>278</locationY>
         <defaultConnectorLabel>Cancel</defaultConnectorLabel>
         <rules>
             <name>Nav_Address_Info</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>nav_addressInfo</leftValueReference>
+                <leftValueReference>nav</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>Address Info</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -25,10 +25,10 @@
             <name>Nav_Create_Contact</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>nav_submit</leftValueReference>
+                <leftValueReference>nav</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>Submit Contact</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -40,23 +40,23 @@
     <decisions>
         <name>Decision_Navigation_0</name>
         <label>Navigation?</label>
-        <locationX>699</locationX>
-        <locationY>23</locationY>
+        <locationX>50</locationX>
+        <locationY>518</locationY>
         <defaultConnectorLabel>Cancel</defaultConnectorLabel>
         <rules>
             <name>Nav_Create_Contact_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>nav_submit</leftValueReference>
+                <leftValueReference>nav</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>Create Contact</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Submit_Contact</targetReference>
             </connector>
-            <label>Submit Contact</label>
+            <label>Create Contact</label>
         </rules>
     </decisions>
     <interviewLabel>Create Contact {!$Flow.CurrentDateTime}</interviewLabel>
@@ -65,6 +65,12 @@
         <name>BuilderType</name>
         <value>
             <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -77,8 +83,8 @@
     <recordCreates>
         <name>Submit_Contact</name>
         <label>Create Contact</label>
-        <locationX>707</locationX>
-        <locationY>200</locationY>
+        <locationX>314</locationX>
+        <locationY>950</locationY>
         <connector>
             <targetReference>screen3</targetReference>
         </connector>
@@ -87,8 +93,8 @@
     <screens>
         <name>screen1</name>
         <label>Contact Info</label>
-        <locationX>160</locationX>
-        <locationY>98</locationY>
+        <locationX>314</locationX>
+        <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -172,86 +178,30 @@
             </outputParameters>
         </fields>
         <fields>
-            <name>screen1_cancelButton</name>
-            <extensionName>c:RC_FlowButton</extensionName>
+            <name>screen1_nav</name>
+            <extensionName>c:RC_FlowNavButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>buttonLabel</name>
-                <value>
-                    <stringValue>Cancel</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>variant</name>
-                <value>
-                    <stringValue>DESTRUCTIVE</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>class</name>
-                <value>
-                    <stringValue>slds-size_6-of-12</stringValue>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-            <outputParameters>
-                <assignToReference>nav_cancel</assignToReference>
-                <name>buttonClicked</name>
-            </outputParameters>
-        </fields>
-        <fields>
-            <name>screen1_addressInfoButton</name>
-            <extensionName>c:RC_FlowButton</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>buttonLabel</name>
+                <name>button2_label</name>
                 <value>
                     <stringValue>Address Info</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>class</name>
-                <value>
-                    <stringValue>slds-size_6-of-12</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>variant</name>
+                <name>button2_variant</name>
                 <value>
                     <stringValue>BRAND-OUTLINE</stringValue>
                 </value>
             </inputParameters>
-            <isRequired>true</isRequired>
-            <outputParameters>
-                <assignToReference>nav_addressInfo</assignToReference>
-                <name>buttonClicked</name>
-            </outputParameters>
-        </fields>
-        <fields>
-            <name>screen1_submitContact</name>
-            <extensionName>c:RC_FlowButton</extensionName>
-            <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>buttonLabel</name>
+                <name>button3_label</name>
                 <value>
                     <stringValue>Submit Contact</stringValue>
                 </value>
             </inputParameters>
-            <inputParameters>
-                <name>class</name>
-                <value>
-                    <stringValue>slds-size_6-of-12</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>variant</name>
-                <value>
-                    <stringValue>BRAND</stringValue>
-                </value>
-            </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
-                <assignToReference>nav_submit</assignToReference>
+                <assignToReference>nav</assignToReference>
                 <name>buttonClicked</name>
             </outputParameters>
         </fields>
@@ -261,8 +211,8 @@
     <screens>
         <name>screen2</name>
         <label>Address</label>
-        <locationX>596</locationX>
-        <locationY>21</locationY>
+        <locationX>50</locationX>
+        <locationY>398</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -302,88 +252,30 @@
             </outputParameters>
         </fields>
         <fields>
-            <name>cancelButton</name>
-            <extensionName>c:RC_FlowButton</extensionName>
+            <name>screen2_nav</name>
+            <extensionName>c:RC_FlowNavButtons</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
-                <name>buttonLabel</name>
+                <name>button2_label</name>
                 <value>
-                    <stringValue>Cancel</stringValue>
+                    <stringValue>Contact Info (Back)</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>variant</name>
-                <value>
-                    <stringValue>DESTRUCTIVE</stringValue>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-            <outputParameters>
-                <assignToReference>nav_cancel</assignToReference>
-                <name>buttonClicked</name>
-            </outputParameters>
-        </fields>
-        <fields>
-            <name>screen2_ContactInfoButton</name>
-            <extensionName>c:RC_FlowButton</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>buttonFlowAction</name>
+                <name>button2_buttonFlowAction</name>
                 <value>
                     <stringValue>BACK</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
-                <name>buttonLabel</name>
-                <value>
-                    <stringValue>Contact Info</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>variant</name>
-                <value>
-                    <stringValue>NEUTRAL</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>class</name>
-                <value>
-                    <stringValue>slds-size_6-of-12</stringValue>
-                </value>
-            </inputParameters>
-            <isRequired>true</isRequired>
-        </fields>
-        <fields>
-            <name>screen2_SubmitContact</name>
-            <extensionName>c:RC_FlowButton</extensionName>
-            <fieldType>ComponentInstance</fieldType>
-            <inputParameters>
-                <name>buttonFlowAction</name>
-                <value>
-                    <stringValue>NEXT</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>buttonLabel</name>
+                <name>button3_label</name>
                 <value>
                     <stringValue>Create Contact</stringValue>
                 </value>
             </inputParameters>
-            <inputParameters>
-                <name>class</name>
-                <value>
-                    <stringValue>slds-size_6-of-12</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>variant</name>
-                <value>
-                    <stringValue>BRAND</stringValue>
-                </value>
-            </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
-                <assignToReference>nav_submit</assignToReference>
+                <assignToReference>nav</assignToReference>
                 <name>buttonClicked</name>
             </outputParameters>
         </fields>
@@ -393,8 +285,8 @@
     <screens>
         <name>screen3</name>
         <label>Confirmation</label>
-        <locationX>852</locationX>
-        <locationY>200</locationY>
+        <locationX>314</locationX>
+        <locationY>1070</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -476,8 +368,8 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>39</locationX>
-        <locationY>98</locationY>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>screen1</targetReference>
         </connector>
@@ -492,14 +384,11 @@
         <objectType>Contact</objectType>
     </variables>
     <variables>
-        <name>nav_addressInfo</name>
-        <dataType>Boolean</dataType>
+        <name>nav</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <booleanValue>false</booleanValue>
-        </value>
+        <isOutput>true</isOutput>
     </variables>
     <variables>
         <name>nav_cancel</name>
