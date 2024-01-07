@@ -2,6 +2,7 @@
 .cci
 .sfdx
 /src.orig
+/mdapioutput
 #/src
 
 # Python

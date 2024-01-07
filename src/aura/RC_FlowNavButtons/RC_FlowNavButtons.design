@@ -1,0 +1,40 @@
+<design:component>
+
+    <!-- input -->
+    <design:attribute name="componentClass" label="[a] Component Class" description="CSS class applied to the component (the group of buttons). Use this to position the buttons. Default position is aligned right with: slds-float_right" />
+
+    <!-- input: button 1 -->
+    <design:attribute name="showButton1" label="[Button 1] a. Show Button" />
+    <design:attribute name="button1_label" label="[Button 1] b. Label" />
+    <design:attribute name="button1_variant" label="[Button 1] c. Variant" description="BASE, NEUTRAL, BRAND, BRAND-OUTLINE, DESTRUCTIVE, DESTRUCTIVE-TEXT, INVERSE, and SUCCESS" />
+    <design:attribute name="button1_class" label="[Button 1] d. Component CSS class" description="Component CSS class (default: slds-size_12-of-12). If this component launches an inline flow, this class will control the area that contains the flow. " />
+    <design:attribute name="button1_padding" label="[Button 1] e. Style Padding" description="padding format: top right bottom left; default: 10px 10px 10px 10px" />
+    <design:attribute name="button1_horizontalAlign" label="[Button 1] f. Horizontal Align" description="center, space, spread, end"/>
+    <design:attribute name="button1_buttonClass" label="[Button 1] g. Button CSS class" description="CSS class applied to the button (example: slds-align_absolute-center)"/>
+    <design:attribute name="button1_buttonFlowAction" label="[Button 1] h. Button Flow Action" description="NEXT, BACK, PAUSE, RESUME, and FINISH" />
+
+    <!-- input: button 2 -->
+    <design:attribute name="showButton2" label="[Button 2] a. Show Button" />
+    <design:attribute name="button2_label" label="[Button 2] b. Label" />
+    <design:attribute name="button2_variant" label="[Button 2] c. Variant" description="BASE, NEUTRAL, BRAND, BRAND-OUTLINE, DESTRUCTIVE, DESTRUCTIVE-TEXT, INVERSE, and SUCCESS" />
+    <design:attribute name="button2_class" label="[Button 2] d. Component CSS class" description="Component CSS class (default: slds-size_12-of-12). If this component launches an inline flow, this class will control the area that contains the flow. " />
+    <design:attribute name="button2_padding" label="[Button 2] e. Style Padding" description="padding format: top right bottom left; default: 10px 10px 10px 10px" />
+    <design:attribute name="button2_horizontalAlign" label="[Button 2] f. Horizontal Align" description="center, space, spread, end"/>
+    <design:attribute name="button2_buttonClass" label="[Button 2] g. Button CSS class" description="CSS class applied to the button (example: slds-align_absolute-center)"/>
+    <design:attribute name="button2_buttonFlowAction" label="[Button 2] h. Button Flow Action" description="NEXT, BACK, PAUSE, RESUME, and FINISH" />
+
+    <!-- input: button 3 -->
+    <design:attribute name="showButton3" label="[Button 3] a. Show Button" />
+    <design:attribute name="button3_label" label="[Button 3] b. Label" />
+    <design:attribute name="button3_variant" label="[Button 3] c. Variant" description="BASE, NEUTRAL, BRAND, BRAND-OUTLINE, DESTRUCTIVE, DESTRUCTIVE-TEXT, INVERSE, and SUCCESS" />
+    <design:attribute name="button3_class" label="[Button 3] d. Component CSS class" description="Component CSS class (default: slds-size_12-of-12). If this component launches an inline flow, this class will control the area that contains the flow. " />
+    <design:attribute name="button3_padding" label="[Button 3] e. Style Padding" description="padding format: top right bottom left; default: 10px 10px 10px 10px" />
+    <design:attribute name="button3_horizontalAlign" label="[Button 3] f. Horizontal Align" description="center, space, spread, end"/>
+    <design:attribute name="button3_buttonClass" label="[Button 3] g. Button CSS class" description="CSS class applied to the button (example: slds-align_absolute-center)"/>
+    <design:attribute name="button3_buttonFlowAction" label="[Button 3] h. Button Flow Action" description="NEXT, BACK, PAUSE, RESUME, and FINISH" />
+
+    <!-- output -->
+    <design:attribute name="buttonClicked" label="[Output] Button Clicked" description="Label of the button that was clicked" />
+
+
+</design:component>
